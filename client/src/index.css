@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .btn-blue{
+    @apply bg-sky-700 text-slate-50 hover:bg-transparent hover:border-sky-700 hover:text-sky-700 ;
+  }
+  .btn-emerald{
+    @apply bg-emerald-700 text-slate-50 hover:bg-transparent hover:border-emerald-700 hover:text-emerald-700 ;
+  }
+  .flex-row-form{
+    @apply flex flex-row gap-x-10  }
+    .form-input{
+      @apply border-gray-500 
+    }
+}
+
+ion-icon{
+  width: 40px;
+  height: 20px;
+}
