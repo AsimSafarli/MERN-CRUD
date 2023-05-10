@@ -9,11 +9,13 @@
     @apply bg-emerald-700 text-slate-50 hover:bg-transparent hover:border-emerald-700 hover:text-emerald-700 ;
   }
   .flex-row-form{
-    @apply flex flex-row gap-x-10  }
-    .form-input{
-      @apply border-gray-500 
-    }
+    @apply flex flex-row gap-x-10;
+  }
+  .form-input{
+    @apply border rounded-lg py-3 px-3 mt-4  border-indigo-600  text-gray-500;
+  }
 }
+
 
 ion-icon{
   width: 40px;

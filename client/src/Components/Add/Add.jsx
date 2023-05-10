@@ -58,11 +58,12 @@ function Add() {
         <Formik initialValues={initialValues} onSubmit={handleAdd}>
           {({ values, handleChange, handleSubmit }) => (
             <form
-              className="flex flex-col items-center justify-center mx-auto max-w-md px-6 py-12"
+              className="flex flex-col items-center gap-y-10 justify-center mx-auto max-w-md px-6 py-12"
               onSubmit={handleSubmit}
+
             >
               <div className="flex-row-form">
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name" className="font-bold text-lg text-black ">Name</label>
                 <input
                   id="name"
                   name="name"
@@ -70,12 +71,12 @@ function Add() {
                   value={values.name}
                   onChange={handleChange}
                   placeholder="Macbook"
-                  className="bg-slate-50"
+                  className="form-input"
 
                 />
               </div>
               <div className="flex-row-form">
-                <label htmlFor="categories">Categories</label>
+                <label htmlFor="categories" className="font-bold text-lg text-black">Categories</label>
                 <input
                   id="categories"
                   name="categories"
@@ -87,7 +88,7 @@ function Add() {
                 />
               </div>
               <div className="flex-row-form">
-                <label htmlFor="price">Price</label>
+                <label htmlFor="price" className="font-bold text-lg text-black">Price</label>
                 <input
                   id="price"
                   name="price"
@@ -98,7 +99,7 @@ function Add() {
                   className="form-input"
                 />
               </div>
-              <button type="submit">Submit</button>
+              <button type="submit" className="bg-sky-700 text-slate-50 hover:bg-transparent hover:text-sky-700 w-40 h-8 hover:border-sky-700 hover:border-solid">Submit</button>
             </form>
           )}
         </Formik>

@@ -19,17 +19,6 @@ function Edit({ product,onConfirm,onCancel }) {
     setPrice(e.target.value);
   };
 
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
   const initialValues = {
     name: "",
     categories: "",
@@ -37,22 +26,10 @@ function Edit({ product,onConfirm,onCancel }) {
   };
   return (
     <div className=" flex items-center justify-around">
-      <Button className="btn-blue " onClick={showModal}>
-        <div className="flex flex-row items-center justify-center">
-          Edit<ion-icon name="create-outline"></ion-icon>
-        </div>
-      </Button>
-      <Modal
-        title="Edit"
-        className="h-52"
-        open={isModalOpen}
-        onOk={handleOk}
-        onCancel={handleCancel}
-      >
         <Formik initialValues={initialValues}>
-          <Form className="flex flex-col items-center justify-center mx-auto max-w-md px-6 py-12">
+          <Form className="flex flex-col gap-y-5 items-center justify-center mx-auto max-w-md px-6 py-12">
             <div className="flex-row-form">
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name" className="font-bold text-lg text-black">Name</label>
               <Field
                 id="name"
                 name="name"
@@ -62,7 +39,7 @@ function Edit({ product,onConfirm,onCancel }) {
               />
             </div>
             <div className="flex-row-form">
-              <label htmlFor="categories">Categories</label>
+              <label htmlFor="categories" className="font-bold text-lg text-black">Categories</label>
               <Field
                 id="categories"
                 name="categories"
@@ -72,7 +49,7 @@ function Edit({ product,onConfirm,onCancel }) {
               />
             </div>
             <div className="flex-row-form">
-              <label htmlFor="price">Price</label>
+              <label htmlFor="price" className="font-bold text-lg text-black">Price</label>
               <Field
                 id="price"
                 name="price"
@@ -81,12 +58,13 @@ function Edit({ product,onConfirm,onCancel }) {
                 value={price} onChange={handlePriceChange} 
               />
             </div>
-
-            <button onClick={() => onConfirm({ id: product._id, name, categories, price })}>Save</button>
-          <button onClick={onCancel}>Cancel</button>
+            <div className="flex flex-row gap-x-5">
+            <button onClick={() => onConfirm({ id: product._id, name, categories, price })} className="bg-green-700 text-slate-50 hover:bg-transparent hover:text-green-700 w-40 h-8 hover:border-green-700 hover:border-solid">Save</button>
+          <button onClick={onCancel} className="bg-red-700 text-slate-50 hover:bg-transparent hover:text-red-700 w-40 h-8 hover:border-red-700 hover:border-solid">Cancel</button>
+            </div>
+           
           </Form>
         </Formik>
-      </Modal>
     </div>
   );
 }

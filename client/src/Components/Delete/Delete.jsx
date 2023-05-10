@@ -17,16 +17,13 @@ function Delete({ product, onConfirm, onCancel }) {
   };
   return (
     <div>
-        <Button onClick={showModal}>
-        Open Modal
-      </Button>
-      <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
       <button onClick={onConfirm}>Delete</button>
           <button onClick={onCancel}>Cancel</button>
-      </Modal>
+     
         </div>
   )
 }
 
 export default Delete
-  
+{/* <button onClick={handleDeleteConfirm}>Delete</button>
+<button onClick={handleCancel}>Cancel</button> */}
